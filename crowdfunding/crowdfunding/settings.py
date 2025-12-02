@@ -17,6 +17,7 @@ from dotenv import load_dotenv
 
 load_dotenv("../.env")
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -27,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get(
     'DJANGO_SECRET_KEY',
-    'django-insecure-b2qnrd1lfg4!0$=y36y(9$0+g)@mekf)bus25_83!h7fei1oek'
+    '<your-secret-key>'
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -65,8 +66,8 @@ AUTH_USER_MODEL = 'users.CustomUser'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware'
-    'corsheaders.middleware.CorsMiddleware'
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',

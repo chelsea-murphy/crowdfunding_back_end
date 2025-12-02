@@ -3,14 +3,12 @@ from django.apps import apps
 
 class PledgeSerializer(serializers.ModelSerializer):
     supporter = serializers.ReadOnlyField(source='supporter.id')
-
     class Meta:
         model = apps.get_model('fundraisers.Pledge')
         fields = '__all__'
 
 class FundraiserSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.id')
-
     class Meta:
         model = apps.get_model('fundraisers.Fundraiser')
         fields = '__all__'
@@ -30,7 +28,6 @@ class FundraiserDetailSerializer(FundraiserSerializer):
         return instance
 
 class PledgeDetailSerializer(PledgeSerializer):
-    fundraiser = FundraiserSerializer(many=False, read_only=True)
 
     def update(self, instance, validated_data):
         instance.amount = validated_data.get('amount', instance.amount)
