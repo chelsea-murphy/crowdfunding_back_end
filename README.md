@@ -29,13 +29,45 @@ As a community organiser (such as an Aged Care facility or hospital), I want to 
 
 ### Front End Pages/Functionality
 
-- {{ A page on the front end }}
-  - {{ A list of dot-points showing functionality is available on this page }}
-  - {{ etc }}
-  - {{ etc }}
-- {{ A second page available on the front end }}
-  - {{ Another list of dot-points showing functionality }}
-  - {{ etc }}
+Log In
+    Log in
+    Sign Up
+    +/- Reset Password
+
+Home page
+    See a list of open fundraises
+    +/- See past fundraises
+    +/- Search
+    +/- Filtering
+
+User Profile
+    See details of currently signed in User account details – name, password, email
+    Change details on user account – edit name, password, email
+    +/- Archive user account
+    +/- View past pledges
+    +/- View related fundraiser
+
+Fundraiser
+-	Title
+-	Owner (User ID)
+-	Image
+-	Target amount to raise
+-	Status: Open / Closed / Deleted
+-	Date of fundraiser creation
+-	+/- Set a planned close date?
+-	+/- See total of pledges amount / progress to target
+-	Pledge action
+o	An amount
+o	The fundraiser
+o	The user (supporter)
+o	Whether the pledge is anonymous or not
+o	A comment with the pledge
+-	Update (Close)
+
+Pledge
+-	Make a pledge (amount, comment, anonymous (optional))
++/- Make an anonymous pledge
+
 
 ### API Spec
 
@@ -59,4 +91,4 @@ It can be helpful to keep the markdown preview open in VS Code so that you can s
 
 ### DB Schema
 
-![]( {{ ./relative/path/to/your/schema/image.png }} )
+![DB Schema](<DB Schema.png>)
