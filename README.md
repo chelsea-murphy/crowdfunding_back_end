@@ -86,3 +86,16 @@ Pledge
 ### DB Schema
 
 ![DB Schema](<DB Schema.png>)
+
+### Examples
+![GET method example](<GET method Example.png>)![POST method example](<POST method Example.png>)![POST emthod example (Pledge)](<POST method Example (Pledge).png>)![User Token Example](<User Token Example.png>)!
+
+### New User
+https://book-bank-19bc3f3758c8.herokuapp.com/users/
+The JSON object contains strings: `{"username": "Four_Test","email": "fourtest+4@gmail.com", "password": "password1"}`
+![POST method - New User](<POST method - New User.png>)!
+
+### New Fundraiser
+https://book-bank-19bc3f3758c8.herokuapp.com/fundraisers/
+The JSON object contains a string, integer and boolean, such as: `{"title": "Matila Wormwood's 8th Birthday" "goal": 100, "is_open": true,}`
+![POST method - New fundraiser](<POST method - New fundraiser.png>)!
