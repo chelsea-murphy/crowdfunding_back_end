@@ -71,12 +71,6 @@ Pledge
 
 ### API Spec
 
-{{ Fill out the table below to define your endpoints. An example of what this might look like is shown at the bottom of the page.
-
-It might look messy here in the PDF, but once it's rendered it looks very neat!
-
-It can be helpful to keep the markdown preview open in VS Code so that you can see what you're typing more easily. }}
-
 | URL    | HTTP Method | Purpose                   | Request Body | Success Response Code | Authentication/Authorisation |
 | ------ | ----------- | ------------------------- | ------------ | --------------------- | ---------------------------- |
 | users/ | POST        | Create a new user account | Includes strings such as:`{"username": "Four_Test","email": "fourtest+4@gmail.com", "password": "password1"}` | 201 Created | Authentication - None Required |
@@ -84,9 +78,9 @@ It can be helpful to keep the markdown preview open in VS Code so that you can s
 | api-token-auth/ | POST | Obtain authentication token | Includes strings such as `{"username": "Two_Test","password": "password"}` | 200 OK | Inherit from parent |
 | fundraisers/ | GET | Retrieve a list of all fundriasers | No body | 200 OK | Authentication Inherit from Parent |
 | fundraisers/{id}/ | GET | Retrieve detailed information about a specific fundraiser, including the pledges | No body | 200 OK | Authentication Inherit from parent |
-| fundraisers/ | POST | Create a new fundraiser | The JSON object contains a string, integer and boolean, such as: `{"title": "Matila Wormwood's 8th Birthday" "goal": 100, "is_open": true,}` | 201 Created |  
+| fundraisers/ | POST | Create a new fundraiser | The JSON object contains a string, integer and boolean, such as: `{"title": "Matila Wormwood's 8th Birthday" "goal": 100, "is_open": true,}` | 201 Created | Authentication Required Bearer Token
+| pledges/ | POST | Create a new pledge | The JSON object contains a string, integer and boolean, such as: {`"title": "Ashgrove SS Prep Book Program (Ashgrove P&C)" "description": "The Ashgrove P&C is establishing a Prep Book Drive to expand the home readers available for our 2026 Prep year group. Join us to bring some fun new titles to our prep year classrooms.","goal": 500,"image": "http://via.placeholder.com/201.jpg","is_open": true, "date_created": "2025-13-06T09:50:25.656443Z"}` | 201 Created | Authentication Required Bearer Token
 | pledges/ | GET | Obtain a list of pledges | No body | 200 OK | Inherit from Parent |
-| pledges/{id}/ | GET | Retrieve details of a specific pledge | No body | 
 | pledges/{id}/ | PUT | Update a pledge | `{"amount": 90,"comment": "Hey, it's Tuesday 2DEC!","anonymous": true,"fundraiser": 2}` | 200 OK | Authentication Bearer Token
 
 ### DB Schema
