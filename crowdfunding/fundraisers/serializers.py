@@ -9,10 +9,16 @@ User = get_user_model()
 class PledgeSerializer(serializers.ModelSerializer):
     supporter = serializers.ReadOnlyField(source='supporter.id')
     fundraiser_title = serializers.ReadOnlyField(source='fundraiser.title')
+    supporter_name = serializers.SerializerMethodField
     
     class Meta:
         model = apps.get_model('fundraisers.Pledge')
         fields = '__all__'
+
+    def get_supporter_name(self, obj):
+        if obj.supporter.first_name and obj.supporter.last_name:
+            return f"{obj.supporter.first_name} {obj.supporter.last_name}"
+        return obj.supporter.username
 
 class FundraiserSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.id')
