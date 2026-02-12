@@ -1,8 +1,6 @@
 from django.contrib import admin
 from .models import Fundraiser, Pledge
 
-User = get_user_model()
-
 # Register Fundraiser
 @admin.register(Fundraiser)
 class FundraiserAdmin(admin.ModelAdmin):
