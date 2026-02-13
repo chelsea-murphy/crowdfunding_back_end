@@ -9,7 +9,7 @@ User = get_user_model()
 class PledgeSerializer(serializers.ModelSerializer):
     supporter = serializers.ReadOnlyField(source='supporter.id')
     fundraiser_title = serializers.ReadOnlyField(source='fundraiser.title')
-    supporter_name = serializers.SerializerMethodField
+    supporter_name = serializers.SerializerMethodField()
     
     class Meta:
         model = apps.get_model('fundraisers.Pledge')
